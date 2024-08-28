@@ -13,9 +13,10 @@ Check out the website:[Visit](https://poemgenerator-bpaxemhgehasaqf5.southindia-
 
 ## Installation
 create a virtual environment in the backend folder
-
+```bash
 cd backend
 pip install -r requirements.txt
+```
 
 cd ../frontend
 npm install
