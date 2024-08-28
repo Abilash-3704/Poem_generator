@@ -16,12 +16,12 @@ socketio = SocketIO(app, cors_allowed_origins="*")
 # Get Claude AI API key from environment variables
 claude_api_key = os.getenv('CLAUDE_API_KEY')
 @app.route('/')
-@cross_origin
+@cross_origin(origins="*", supports_credentials=True)
 def serve():
     return send_from_directory(app.static_folder,'index.html')
 
 @app.route('/generate_poem', methods=['POST'], endpoint='generate_poem')
-@cross_origin
+@cross_origin(origins="*", supports_credentials=True)
 def generate_poem():
     data = request.json
     prompt = data.get("prompt")
