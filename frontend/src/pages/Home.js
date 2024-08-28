@@ -35,7 +35,8 @@ ChartJS.register(
 const sentiment = new Sentiment();
 const port = process.env.PORT || 8000;
 
-const socket = io(`http://localhost:${port}`);
+// const socket = io(`http://localhost:${port}`);
+const socket = io();
 
 export default function Home() {
   const [prompt, setPrompt] = useState('');
