@@ -37,7 +37,7 @@ const port = process.env.PORT || 8000;
 
 // const socket = io(`http://localhost:${port}`);
 const socket = io(
-  'poemgenerator-bpaxemhgehasaqf5.southindia-01.azurewebsites.net',
+  'https://poemgenerator-bpaxemhgehasaqf5.southindia-01.azurewebsites.net',
 );
 
 export default function Home() {
