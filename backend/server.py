@@ -10,7 +10,7 @@ import anthropic
 load_dotenv()
 
 app = Flask(__name__,static_folder='../frontend/build',static_url_path='')
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 socketio = SocketIO(app, cors_allowed_origins="*")
 
 # Get Claude AI API key from environment variables
