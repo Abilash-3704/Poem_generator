@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react';
 import axios from 'axios';
-import io from 'socket.io-client';
+import {io} from 'socket.io-client';
 import {FaArrowRight, FaArrowDown} from 'react-icons/fa6';
 import {
   motion,
@@ -35,8 +35,8 @@ ChartJS.register(
 const sentiment = new Sentiment();
 const port = process.env.PORT || 8000;
 
-// const socket = io(`http://localhost:${port}`);
-const socket = io();
+const socket = io(`http://localhost:${port}`);
+// const socket = io();
 
 export default function Home() {
   const [prompt, setPrompt] = useState('');
