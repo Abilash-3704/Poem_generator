@@ -10,7 +10,7 @@ import anthropic
 load_dotenv()
 
 app = Flask(__name__,static_folder='../frontend/build',static_url_path='')
-CORS(app, resources={r"/*": {"origins": "*"}})
+CORS(app, resources={r"/*": {"origins": "https://poemgenerator-bpaxemhgehasaqf5.southindia-01.azurewebsites.net"}}, supports_credentials=True)
 socketio = SocketIO(app, cors_allowed_origins="*")
 
 # Get Claude AI API key from environment variables
@@ -21,7 +21,7 @@ def serve():
     return send_from_directory(app.static_folder,'index.html')
 
 @app.route('/generate_poem', methods=['POST'], endpoint='generate_poem')
-@cross_origin(origins="*", supports_credentials=True)
+@cross_origin(origins="https://poemgenerator-bpaxemhgehasaqf5.southindia-01.azurewebsites.net", supports_credentials=True)
 def generate_poem():
     data = request.json
     prompt = data.get("prompt")
