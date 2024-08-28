@@ -17,9 +17,10 @@ create a virtual environment in the backend folder
 cd backend
 pip install -r requirements.txt
 ```
-
+```bash
 cd ../frontend
 npm install
+```
 
 change the socket io url and the fetch url in axios request to localhost with a preferred port
 set the proxy value in package.json to the localhost with the port where the server.py file sets the server up
@@ -32,11 +33,13 @@ CLAUDE_API_KEY={your claude api key generated from anthropic}
 ## Usage
 
 Run the backend server:
-
+```
 cd backend
 python server.py
+```
 
 Start the react server
-
+```
 cd ../frontend
 npm run start
+```
