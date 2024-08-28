@@ -37,7 +37,7 @@ const port = process.env.PORT || 8000;
 
 // const socket = io(`http://localhost:${port}`);
 const socket = io(
-  'https://poemgeneratorproject-bvbydya5ewdechgj.southindia-01.azurewebsites.net',
+  'poemgenerator-bpaxemhgehasaqf5.southindia-01.azurewebsites.net',
 );
 
 export default function Home() {
@@ -118,7 +118,7 @@ export default function Home() {
     try {
       // await axios.post(`http://localhost:${port}/generate_poem`, {prompt});
       await axios.post(
-        `https://poemgeneratorproject-bvbydya5ewdechgj.southindia-01.azurewebsites.net/generate_poem`,
+        `https://poemgenerator-bpaxemhgehasaqf5.southindia-01.azurewebsites.net/generate_poem`,
         {prompt},
       );
     } catch (error) {
