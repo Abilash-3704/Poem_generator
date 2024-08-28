@@ -61,4 +61,5 @@ def generate_poem():
     return jsonify({"status": "Generating poem..."}), 200
 
 if __name__ == '__main__':
-    socketio.run(app, host='0.0.0.0', port=8080, debug=True)
+    port = int(os.environ.get("PORT", 8000))  # Use the PORT environment variable or default to 5000
+    socketio.run(app, host='0.0.0.0', port=port, debug=True)
