@@ -20,7 +20,7 @@ claude_api_key = os.getenv('CLAUDE_API_KEY')
 def serve():
     return send_from_directory(app.static_folder,'index.html')
 
-@app.route('/generate_poem', methods=['POST'])
+@app.route('/generate_poem', methods=['POST'], endpoint='generate_poem')
 @cross_origin
 def generate_poem():
     data = request.json
