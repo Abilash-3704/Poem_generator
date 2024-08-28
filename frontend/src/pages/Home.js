@@ -35,8 +35,10 @@ ChartJS.register(
 const sentiment = new Sentiment();
 const port = process.env.PORT || 8000;
 
-const socket = io(`http://localhost:${port}`);
-// const socket = io();
+// const socket = io(`http://localhost:${port}`);
+const socket = io(
+  'https://poemgeneratorproject-bvbydya5ewdechgj.southindia-01.azurewebsites.net',
+);
 
 export default function Home() {
   const [prompt, setPrompt] = useState('');
@@ -114,7 +116,11 @@ export default function Home() {
     setFinalPrompt(prompt);
 
     try {
-      await axios.post(`http://localhost:${port}/generate_poem`, {prompt});
+      // await axios.post(`http://localhost:${port}/generate_poem`, {prompt});
+      await axios.post(
+        `https://poemgeneratorproject-bvbydya5ewdechgj.southindia-01.azurewebsites.net/generate_poem`,
+        {prompt},
+      );
     } catch (error) {
       console.error('Error generating poem:', error);
       setError(error.message);
